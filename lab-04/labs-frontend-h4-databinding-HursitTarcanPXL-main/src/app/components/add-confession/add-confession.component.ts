@@ -15,4 +15,16 @@ export class AddConfessionComponent implements OnInit {
     this.confession = new Confession('', '', '');
   }
 
+  resetForm(): void{
+    this.confession.author = '';
+    this.confession.post = '';
+    this.confession.department = '';
+  }
+
+  addNew(): void{
+    let newConfession: Confession = new Confession(this.confession.post, this.confession.department, this.confession.author);
+    console.log(newConfession);
+    alert("Added confession!");
+    this.resetForm();
+  }
 }

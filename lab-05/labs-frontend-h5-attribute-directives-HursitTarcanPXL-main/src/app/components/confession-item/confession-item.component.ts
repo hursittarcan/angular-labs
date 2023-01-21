@@ -11,8 +11,13 @@ export class ConfessionItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
+  like(): void {
+    this.confession.likes++;
+  }
 
+  dislike(): void {
+    this.confession.dislikes--;
+  }
 }

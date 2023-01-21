@@ -4,7 +4,7 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"> {{confession.post}}</h5>
-    <p class="card-text">{{confession.author}}</p>
+    <p class="card-text" *ngIf="confession.author != 'anonymous'">{{confession.author}}</p>
     <a class="btn btn-success" (click)="like()">({{confession.likes}}) like</a>
     <a class="btn btn-danger" (click)="dislike()">({{confession.dislikes}}) dislike</a>
   </div>

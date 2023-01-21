@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
+import {UserService} from "../../services/user.service";
 
 
 @Component({
@@ -10,7 +11,10 @@ import { User } from 'src/app/models/user.model';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: UntypedFormGroup;
-  constructor() { }
+
+  constructor(private userService: UserService) { }
+
+  @Output() finishRegister = new EventEmitter();
 
   ngOnInit(): void {
     this.registerForm = new UntypedFormGroup({
@@ -26,10 +30,11 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void{
     let newUser: User = new User('','','','',0,'');
     Object.assign(newUser,this.registerForm.value);
+    this.userService.addUser(newUser);
+    this.finishRegister.emit(newUser);
   }
 
   get registerFormControls() {
     return this.registerForm.controls;
   }
-
 }

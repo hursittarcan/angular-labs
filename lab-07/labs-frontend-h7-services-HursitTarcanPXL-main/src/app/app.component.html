@@ -1,7 +1,7 @@
 <div class="modal" *ngIf="registerActive">
   <div class="modal-content">
     <span class="close" (click)="hideRegister()">&times;</span>
-    <app-register></app-register>
+    <app-register (finishRegister)="hideRegister()"></app-register>
   </div>
 </div>
 

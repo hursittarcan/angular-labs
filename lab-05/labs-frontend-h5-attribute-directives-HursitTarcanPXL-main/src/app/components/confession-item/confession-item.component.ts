@@ -18,6 +18,6 @@ export class ConfessionItemComponent implements OnInit {
   }
 
   dislike(): void {
-    this.confession.dislikes--;
+    this.confession.dislikes++;
   }
 }

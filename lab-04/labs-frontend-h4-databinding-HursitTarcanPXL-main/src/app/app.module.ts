@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ConfessionItemComponent } from './components/confession-item/confession-item.component';
+import { AddConfessionComponent } from './components/add-confession/add-confession.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConfessionItemComponent
+    ConfessionItemComponent,
+    AddConfessionComponent
   ],
   imports: [
     BrowserModule

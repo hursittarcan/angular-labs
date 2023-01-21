@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ConfessionItemComponent } from './components/confession-item/confession-item.component';
 import { AddConfessionComponent } from './components/add-confession/add-confession.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddConfessionComponent } from './components/add-confession/add-confessi
     AddConfessionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

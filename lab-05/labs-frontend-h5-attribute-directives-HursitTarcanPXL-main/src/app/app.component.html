@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>PXL Confessions</h1>
+  <app-confession-item [confession]="confessionList[0]">
+  </app-confession-item>
+  <app-add-confession (newItemEvent)="processAdd($event)"></app-add-confession>
+</div>

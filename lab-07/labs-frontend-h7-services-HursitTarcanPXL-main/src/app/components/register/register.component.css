@@ -1,0 +1,10 @@
+.formsubmit{
+  margin-top: 10px;
+}
+
+small{
+  display: block;
+  color: #a94442;
+  font-style: italic;
+  font-size: 0.8rem;
+}

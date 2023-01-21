@@ -3,3 +3,12 @@ img{
   margin: 0 auto;
   width: 140px;
 }
+
+.digital {
+  border: 1px solid green;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+

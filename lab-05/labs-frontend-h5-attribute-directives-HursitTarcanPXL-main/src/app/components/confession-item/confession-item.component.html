@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{'digital': (confession.department.toLowerCase() == 'pxl-digital')}">
   <div class="card-header">
     <img [src]="getDepartmentUrl(confession.department)" alt="logo" />
   </div>

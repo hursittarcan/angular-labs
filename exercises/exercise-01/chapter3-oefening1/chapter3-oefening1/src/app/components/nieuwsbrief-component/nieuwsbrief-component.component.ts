@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nieuwsbrief-component.component.css']
 })
 export class NieuwsbriefComponentComponent implements OnInit {
+  name: string | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buttonClick(): void {
+    alert("hello world!" + this.name);
   }
 
 }

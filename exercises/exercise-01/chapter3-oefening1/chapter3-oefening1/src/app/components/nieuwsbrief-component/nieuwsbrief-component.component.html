@@ -1,1 +1,6 @@
-<p>nieuwsbrief-component works!</p>
+<div>
+  <label for="mail">Schrijf je in voor onze nieuwsbrief: </label>
+  <input id="adres" type="text" [(ngModel)]="name"/>
+  <input id="mail" value="button" type="button" (click)="buttonClick()"/>
+  <p>{{ name }}</p>
+</div>

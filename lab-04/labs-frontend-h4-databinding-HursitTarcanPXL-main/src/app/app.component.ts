@@ -13,8 +13,12 @@ export class AppComponent {
     new Confession('Angular beats VueJS any day','PXL-Digital','anonymous', true),
     new Confession('Taxes taxes taxes','PXL-Business','anonymous', false),
     new Confession('Am i an artist yet','PXL-MAD','banksy', false)
-  ]
+  ];
 
+  processAdd(event: Confession): void{
+    this.confessionList.push(event);
+    console.log(this.confessionList);
+  }
 
   title = 'template-frontend-h4-databinding-lab';
 }

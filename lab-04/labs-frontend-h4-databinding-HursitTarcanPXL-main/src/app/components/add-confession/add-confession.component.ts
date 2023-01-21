@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Confession} from "../../models/confession.model";
 
 @Component({
@@ -8,6 +8,8 @@ import {Confession} from "../../models/confession.model";
 })
 export class AddConfessionComponent implements OnInit {
   confession!: Confession;
+
+  @Output() newItemEvent = new EventEmitter<Confession>();
 
   constructor() { }
 
@@ -22,9 +24,8 @@ export class AddConfessionComponent implements OnInit {
   }
 
   addNew(): void{
-    let newConfession: Confession = new Confession(this.confession.post, this.confession.department, this.confession.author);
-    console.log(newConfession);
-    alert("Added confession!");
+    let newConfession = new Confession(this.confession.post, this.confession.department, this.confession.author);
+    this.newItemEvent.emit(newConfession);
     this.resetForm();
   }
 }

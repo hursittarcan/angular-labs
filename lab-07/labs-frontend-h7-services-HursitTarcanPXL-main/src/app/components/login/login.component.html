@@ -1,0 +1,19 @@
+<div id="logreg-forms">
+  <form class="form-signin" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <h2>Sign in</h2>
+      <input type="email" class="form-control" placeholder="Email address"
+      name="email" [(ngModel)]="email" #emailRef="ngModel"
+      required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <small *ngIf="emailRef.errors?.required && emailRef.touched">email is required!</small>
+      <small *ngIf="emailRef.errors?.pattern && emailRef.touched">email format is incorrect!</small>
+      <input type="password" class="form-control" placeholder="Password"
+      name="password" [(ngModel)]="password" #passwordRef="ngModel"
+      required minlength="8">
+      <small *ngIf="passwordRef.errors?.required && emailRef.touched">password is required!</small>
+      <small *ngIf="passwordRef.errors?.minlength && emailRef.touched">password must be 8 characters or longer!</small>
+      <button class="btn btn-success btn-block" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+      <hr>
+      <button class="btn btn-primary btn-block" type="button" (click)="showRegister()">Sign up New Account</button>
+  </form>
+
+</div>

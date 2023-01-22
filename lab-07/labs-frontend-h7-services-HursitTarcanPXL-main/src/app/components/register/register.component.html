@@ -1,0 +1,40 @@
+<h2>Sign up now!</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" placeholder="Enter Username"  formControlName="username">
+    <small *ngIf="registerFormControls.username.errors?.required && registerFormControls.username.touched">username is required!</small>
+    <small *ngIf="registerFormControls.username.errors?.minlength && registerFormControls.username.touched">username must be at least 3 characters!</small>
+  </div>
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" formControlName="firstName">
+    <small *ngIf="registerFormControls.firstName.errors?.required && registerFormControls.firstName.touched">First name is required!</small>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" formControlName="lastName">
+    <small *ngIf="registerFormControls.lastName.errors?.required && registerFormControls.lastName.touched">Last name is required!</small>
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+    <small *ngIf="registerFormControls.email.errors?.required && registerFormControls.email.touched">Email is required!</small>
+    <small *ngIf="registerFormControls.email.errors?.pattern && registerFormControls.email.touched">Wrong email format!</small>
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age" placeholder="Enter age" formControlName="age">
+    <small *ngIf="registerFormControls.age.errors?.required && registerFormControls.age.touched">Age is required!</small>
+  </div>
+  <div class="form-group">
+    <label for="subscription">Subscription</label>
+    <select class="form-control" id="subscription" formControlName="subscription">
+      <option value=""></option>
+      <option value="free">Free tier</option>
+      <option value="premium">Premium plan</option>
+    </select>
+    <small *ngIf="registerFormControls.subscription.errors?.required && registerFormControls.subscription.touched">Subscription is required!</small>
+  </div>
+  <button type="submit" class="btn btn-primary formsubmit" [disabled]="!registerForm.valid">Submit</button>
+</form>
